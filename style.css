@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --ModerateViolet: hsl(263, 55%, 52%);
+  --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --LightGray: hsl(0, 0%, 81%);
+  --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+body {
+  font-family: "Barlow Semi Condensed";
+  background: var(--LightGrayishBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 1rem;
+  height: 50rem;
+}
+.profile {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+span {
+  opacity: 0.5;
+}
+img {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+.person {
+  height: fit-content;
+  color: white;
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+p {
+  font-size: 0.7rem;
+}
+.person > p:nth-child(2) {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.person > p:last-child {
+  opacity: 0.7;
+}
+.person:nth-child(1) {
+  background-color: var(--ModerateViolet);
+  grid-area: 1 / 1 / 2 / 3;
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 80% 0%;
+}
+.person:nth-child(2) {
+  background-color: var(--VeryDarkGrayishBlue);
+  grid-area: 1 / 3 / 2 / 4;
+}
+.person:nth-child(4) {
+  background-color: var(--VeryDarkBlackishBlue);
+  grid-area: 2 / 2 / 3 / 4;
+}
+.person:nth-child(3) {
+  color: black;
+  background-color: var(--White);
+  grid-area: 2 / 1 / 3 / 2;
+}
+.person:nth-child(5) {
+  color: black;
+  background-color: var(--White);
+  grid-area: 1 / 4 / 3 / 5;
+}
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
